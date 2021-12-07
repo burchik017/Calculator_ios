@@ -1,18 +1,62 @@
+:root {
+    --bg-white: #fff;
+    --main: #fff;
+    --box-shadow: 4px 4px 4px #4f4f4f;
+    --bg-btn: #333;
+}
+:root[data-theme='dark'] {
+    --bg-white: #050505;
+    --main: #333;
+    --box-shadow: 3px 3px 76px rgb(233, 229, 229);
+    --bg-btn: #fff;
+}
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--main);
+    font-weight: 400;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 14px;
+    font-family: 'RobotoMono', sans-serif;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: var(--bg-white);
+}
+
+button {
+    margin:  40px;
+    border: none;
+    background-color: rgb(41, 38, 38);
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 200;
+    border: 1.3px solid #e6da3eb4;
+}
+
 .calc {
     margin: 50px auto;
     width: 300px;
     height: 500px;
     border-radius: 20px;
     background: #000;
-    color: #fff;
+    color: var(--main);
     font-family: Arial;
-    padding: 18px;
-    box-shadow: 4px 4px 4px #4f4f4f;
+    padding: 18px 12px;
+    box-shadow: var(--box-shadow);
 }
 
 .calc-screen {
-    height: 105px;
-    padding: 10px;
+    height: 90px;
+    padding: 0 10px 10px;
     display: grid;
     justify-items: end;
     align-items: end;
@@ -23,6 +67,7 @@
    text-align: center;
    font-size: 4rem;
    margin: 0;
+   color: #fff;
 }
 
 .buttons {
@@ -35,7 +80,7 @@
 .btn {
     width: 60px;
     height: 60px;
-    background: #333;
+    background: var(--bg-btn);
     border-radius: 50%;
     text-align: center;
     line-height: 60px;

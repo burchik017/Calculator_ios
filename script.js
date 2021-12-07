@@ -134,3 +134,26 @@ let doc = document;
     }
 
  });
+
+
+// Color scheme
+const switcherTheme = doc.querySelector('.switcher-theme');
+
+function theme() {
+	const toggleTheme = document.querySelector('.switcher-theme');
+	toggleTheme.addEventListener('click', () => {
+		if (document.documentElement.hasAttribute('data-theme')) {
+			document.documentElement.removeAttribute('data-theme');
+			localStorage.removeItem('theme');
+            switcherTheme.textContent = "Light Mode 🌞";
+		} else {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			localStorage.setItem('theme', 'dark');
+            switcherTheme.textContent = "Dark Mode 🌙";
+		}
+	});
+	if (localStorage.getItem('theme') !== null) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+	}
+}
+theme();
