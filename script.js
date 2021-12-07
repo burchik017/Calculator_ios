@@ -93,9 +93,12 @@ let doc = document;
     };
 
     //если нажата "+/-" 
-    // if (action.includes(key)) {
     if (key === '+/-') {
-        if (a !== '' || b === '') {
+        if (a === '') {
+            a = `0`;
+            out.textContent = a;
+        }
+        if (a !== '' && b === '') {
             a = `${-a}`;
             out.textContent = a;
         } 
@@ -103,7 +106,6 @@ let doc = document;
             b = `${-b}`;
             out.textContent = b;
         }
-        console.log(a, 'and',b);
     };
 
 
