@@ -92,13 +92,28 @@ let doc = document;
         return;
     };
 
-    //если нажата + - / X
+    //если нажата "+/-" 
+    // if (action.includes(key)) {
+    if (key === '+/-') {
+        if (a !== '' || b === '') {
+            a = `${-a}`;
+            out.textContent = a;
+        } 
+        if (b !== '') {
+            b = `${-b}`;
+            out.textContent = b;
+        }
+        console.log(a, 'and',b);
+    };
+
+
+    // если нажата клавиша + - / *
     if (action.includes(key)) {
         sign = key;
         out.textContent = sign;
-     
+        console.table(a, b , sign);
         return;
-    };
+    }
 
     //если нажата =
     if (key === '=') {
